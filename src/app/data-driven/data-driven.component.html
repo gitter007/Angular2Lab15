@@ -1,0 +1,28 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="searchTerm">Name</label><br>
+      <input type="text"
+             class="form-control"
+             id="searchTerm"
+             formControlName="searchTerm">
+     <control-messages [control]="myForm.controls.searchTerm"></control-messages>
+
+    </div>
+
+    <mypost  [data] ="posts"></mypost>
+
+    <ul>
+        <li *ngFor ="let item of posts"> {{item.body}} </li>
+    </ul>
+  <!-- <div class="form-group">
+    <label for="postData">Post</label><br>
+    <textarea rows="4" cols="50" 
+    class="form-control" 
+    id="postData"
+    formControlName="postData"></textarea> 
+    <control-messages [control]="myForm.controls.postData"></control-messages>
+ 
+  </div>
+   -->
+</form>
